@@ -1,6 +1,6 @@
 package ui;
 
-import blackjack.Blackjack;
+import blackjack.BlackJack;
 import chromedinosaur.ChromeDinosaur;
 import java.awt.*;
 import javax.swing.*;
@@ -13,15 +13,26 @@ public class GameSelectorUI {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(400, 300);
         JPanel panel = new JPanel();
-        panel.setLayout(new GridLayout(3, 1, 10, 10)); 
+        panel.setLayout(new GridLayout(3, 1, 10, 10));
 
         JButton blackjackButton = new JButton("Play Blackjack");
         JButton chromeDinosaurGameButton = new JButton("Play Dinosaur Game");
         JButton spaceInvadersButton = new JButton("Play Space Invaders");
 
-        blackjackButton.addActionListener(e -> Blackjack.startGame());
-        chromeDinosaurGameButton.addActionListener(e -> ChromeDinosaur.startGame());
-        spaceInvadersButton.addActionListener(e -> SpaceInvaders.startGame());
+        blackjackButton.addActionListener(e -> {
+            new BlackJack().startGame();
+            frame.dispose();  
+        });
+
+        chromeDinosaurGameButton.addActionListener(e -> {
+            new ChromeDinosaur().startGame();
+            frame.dispose();
+        });
+
+        spaceInvadersButton.addActionListener(e -> {
+            new SpaceInvaders().startGame();
+            frame.dispose();
+        });
 
         panel.add(blackjackButton);
         panel.add(chromeDinosaurGameButton);
