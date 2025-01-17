@@ -3,7 +3,6 @@
 
 ### STS ###
 .apt_generated
-.classpath
 .factorypath
 .project
 .settings
@@ -75,8 +74,6 @@ local.properties
 # Eclipse Core
 .project
 
-# JDT-specific (Eclipse Java Development Tools)
-.classpath
 
 # Annotation Processing
 .apt_generated
@@ -185,7 +182,6 @@ build/
 .#*
 *#
 *~
-.classpath
 .project
 .settings
 bin
